@@ -1,82 +1,69 @@
-# React Forms Project
+# React + TypeScript + Vite
 
-## Description
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This is a learning project from **RS School (React 2025 Q3)**.  
-The application demonstrates working with forms in React, including state management, validation, and displaying submitted data.
+Currently, two official plugins are available:
 
-## Technologies
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- React
-- TypeScript
-- Vite
-- Redux Toolkit (state management)
-- React Hook Form (controlled form)
-- Yup (form validation)
-- ESLint (code analysis)
-- Prettier (code formatting)
-- Husky (git hooks, pre-commit)
-- Vitest + React Testing Library (unit testing)
-- React Portals (modal windows)
+## Expanding the ESLint configuration
 
-## Features
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- Two forms implemented: uncontrolled and controlled (React Hook Form)
-- State management with Redux Toolkit
-- Form validation with Yup
-- Forms displayed in accessible modals using React Portals
-- Submitted data displayed on the main page
+```js
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## Installation & Running
+      // Remove tseslint.configs.recommended and replace with this
+      ...tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      ...tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      ...tseslint.configs.stylisticTypeChecked,
 
-- Clone the repository and navigate into the project directory
-
-```
-git clone git@github.com:IrynaSerhiienko/rs-react-form.git
-```
-
-```
-cd rs-react-form
-```
-
-- Install dependencies
-
-```
-npm install
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-- Run the development server (starts the app in development mode)
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```
-npm run dev
-```
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- Build the project for production (creates optimized files in the dist folder)
-
-```
-npm run build
-```
-
-- Run unit tests using Vitest and React Testing Library
-
-```
-npm run test
-```
-
-- Run tests in watch mode (re-runs tests automatically on file changes)
-
-```
-npm run test:watch
-```
-
-- Generate test coverage report
-
-```
-npm run coverage
-```
-
-- Format code with Prettier (fix formatting issues)
-
-```
-npm run format
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
