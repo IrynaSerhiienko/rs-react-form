@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Card } from '../../components/card/card';
 import { useForms } from '../../store/hooks/use-forms';
-import { useNavigate } from 'react-router-dom';
 import { HOME_PAGE, ROUTES } from '../../types/types';
 
 export function HomePage() {
