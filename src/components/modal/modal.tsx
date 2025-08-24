@@ -50,12 +50,14 @@ export function Modal() {
     <>
       {isOpen &&
         createPortal(
-          <div className="fixed inset-0 flex items-center justify-center bg-[var(--color-neutral)]/50 z-40">
-            <ModalContent
-              onClose={handleClose}
-              onOpen={handleOpen}
-              activeForm={activeForm}
-            />
+          <div className="fixed inset-0 flex items-center justify-center bg-[var(--color-neutral)]/95 z-40">
+            <div className="mt-16 w-full flex justify-center">
+              <ModalContent
+                onClose={handleClose}
+                onOpen={handleOpen}
+                activeForm={activeForm}
+              />
+            </div>
           </div>,
           document.body
         )}
