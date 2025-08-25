@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,20 +95,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import type { InputHTMLAttributes, RefObject } from 'react';
 &nbsp;
 interface CheckboxFieldProps extends InputHTMLAttributes&lt;HTMLInputElement&gt; {
@@ -118,20 +118,20 @@ interface CheckboxFieldProps extends InputHTMLAttributes&lt;HTMLInputElement&gt;
   inputRef?: RefObject&lt;HTMLInputElement | null&gt;;
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export function CheckboxField(props: CheckboxFieldProps) {</span>
-<span class="cstat-no" title="statement not covered" >  const { id, label, error, inputRef, ...rest } = props;</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;div className="flex flex-col"&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;div className="flex items-center gap-2"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;input type="checkbox" id={id} ref={inputRef} {...rest} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;label htmlFor={id}&gt;{label}&lt;/label&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/div&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;p className="text-[var(--color-error-content)] mt-1 min-h-[1.25rem] text-base"&gt;</span>
-<span class="cstat-no" title="statement not covered" >        {error || '\u00A0'}</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/p&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
+export function CheckboxField(props: CheckboxFieldProps) {
+  const { id, label, error, inputRef, ...rest } = props;
+  return (
+    &lt;div className="flex flex-col"&gt;
+      &lt;div className="flex items-center gap-2"&gt;
+        &lt;input type="checkbox" id={id} ref={inputRef} {...rest} /&gt;
+        &lt;label htmlFor={id}&gt;{label}&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;p className="text-[var(--color-error-content)] mt-1 min-h-[1.25rem] text-base"&gt;
+        {error || '\u00A0'}
+      &lt;/p&gt;
+    &lt;/div&gt;
   );
-<span class="cstat-no" title="statement not covered" >}</span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -139,7 +139,7 @@ interface CheckboxFieldProps extends InputHTMLAttributes&lt;HTMLInputElement&gt;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-25T03:51:53.174Z
+                at 2025-08-25T12:24:04.631Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
