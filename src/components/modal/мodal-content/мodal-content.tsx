@@ -7,12 +7,16 @@ type ModalContentProps = {
   onClose: () => void;
   onOpen: (form: FormType) => void;
   activeForm: FormType | null;
+  modalRef: React.RefObject<HTMLDivElement | null>;
 };
 
 export function ModalContent(props: ModalContentProps) {
-  const { onClose, onOpen, activeForm } = props;
+  const { onClose, onOpen, activeForm, modalRef } = props;
   return (
-    <div className="relative bg-[var(--color-base-100)] p-4 rounded-lg shadow-lg w-full max-w-md max-h-[80vh] overflow-y-auto text-[var(--color-base-content)] flex flex-col">
+    <div
+      ref={modalRef}
+      className="relative bg-[var(--color-base-100)] p-4 rounded-lg shadow-lg w-full max-w-md max-h-[80vh] overflow-y-auto text-[var(--color-base-content)] flex flex-col"
+    >
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-[var(--color-error-content)] font-bold text-lg cursor-pointer"

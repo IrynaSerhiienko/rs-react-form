@@ -22,16 +22,15 @@ export function Modal() {
   };
 
   useEffect(() => {
-    if (!isOpen) return;
-
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === KEY_CODES.ESCAPE) handleClose();
+      if (event.key === KEY_CODES.ESCAPE && isOpen) handleClose();
     };
 
     const handleClickOutside = (event: MouseEvent) => {
       if (
         modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
+        !modalRef.current.contains(event.target as Node) &&
+        isOpen
       ) {
         handleClose();
       }
@@ -56,6 +55,7 @@ export function Modal() {
                 onClose={handleClose}
                 onOpen={handleOpen}
                 activeForm={activeForm}
+                modalRef={modalRef}
               />
             </div>
           </div>,
