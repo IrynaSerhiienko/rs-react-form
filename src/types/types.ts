@@ -141,3 +141,16 @@ export const genderOptions = [
   { label: GENDER.FEMALE, value: GENDER.FEMALE },
   { label: GENDER.UNKNOWN, value: GENDER.UNKNOWN },
 ];
+
+export type CardProps = {
+  id: string;
+  name: string;
+  age: number;
+  country: string;
+  gender: string;
+  email: string;
+  password: string;
+  acceptTerms: boolean;
+  picture: string | null;
+  isNew?: boolean;
+};

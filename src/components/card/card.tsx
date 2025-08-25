@@ -1,20 +1,8 @@
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
 
+import type { CardProps } from '../../types/types';
 import { ACCEPT_TERMS, INPUT_LABEL } from '../../types/types';
-
-type CardProps = {
-  id: string;
-  name: string;
-  age: number;
-  country: string;
-  gender: string;
-  email: string;
-  password: string;
-  acceptTerms: boolean;
-  picture: string | null;
-  isNew?: boolean;
-};
 
 export function Card(props: CardProps) {
   const {
