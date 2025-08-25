@@ -22,6 +22,7 @@ import { FileField } from '../inputs/file-field/file-field';
 import { RadioField } from '../inputs/radio-field/radio-field';
 import { SelectField } from '../inputs/select-field/select-field';
 import { TextField } from '../inputs/text-field/text-field';
+import { PasswordStrengthBar } from '../password-strength-bar/password-strength-bar';
 
 type FormData = InferType<typeof schema>;
 
@@ -34,6 +35,7 @@ export function ReactHookForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors, isValid },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
@@ -75,6 +77,16 @@ export function ReactHookForm() {
     navigate(ROUTES.HOME);
   };
 
+  const passwordValue = watch(INPUT_NAME.PASSWORD);
+
+  const passwordRules = {
+    minLength: passwordValue?.length >= 8,
+    upper: /[A-Z]/.test(passwordValue),
+    lower: /[a-z]/.test(passwordValue),
+    number: /\d/.test(passwordValue),
+    special: /[\W_]/.test(passwordValue),
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
       <p className="text-[var(--color-info-content)] mb-2 text-base md:text-lg">
@@ -106,15 +118,17 @@ export function ReactHookForm() {
         {...register(INPUT_NAME.EMAIL)}
         error={errors.email?.message}
       />
-
-      <TextField
-        id={INPUT_NAME.PASSWORD}
-        label={INPUT_LABEL.PASSWORD}
-        type={INPUT_TYPE.PASSWORD}
-        required
-        {...register(INPUT_NAME.PASSWORD)}
-        error={errors.password?.message}
-      />
+      <div>
+        <TextField
+          id={INPUT_NAME.PASSWORD}
+          label={INPUT_LABEL.PASSWORD}
+          type={INPUT_TYPE.PASSWORD}
+          required
+          {...register(INPUT_NAME.PASSWORD)}
+          error={errors.password?.message}
+        />
+        <PasswordStrengthBar rules={passwordRules} />
+      </div>
 
       <TextField
         id={INPUT_NAME.CONFIRM_PASSWORD}

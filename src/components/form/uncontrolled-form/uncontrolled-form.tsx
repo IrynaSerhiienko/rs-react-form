@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ValidationError as YupValidationError } from 'yup';
 
@@ -19,6 +19,7 @@ import { schema } from '../../../utils/form-validation';
 import { CheckboxField } from '../inputs/checkbox-field/checkbox-field';
 import { SelectField } from '../inputs/select-field/select-field';
 import { TextField } from '../inputs/text-field/text-field';
+import { PasswordStrengthBar } from '../password-strength-bar/password-strength-bar';
 
 type ValidationErrors = Partial<
   Record<keyof (typeof schema)['fields'], string>
@@ -29,6 +30,7 @@ export function UncontrolledForm() {
   const navigate = useNavigate();
   const { countries } = useCountries();
   const [errors, setErrors] = useState<ValidationErrors>({});
+  const [passwordValue, setPasswordValue] = useState('');
 
   const genderRefs: React.RefObject<HTMLInputElement | null>[] =
     genderOptions.map(() => React.createRef<HTMLInputElement>());
@@ -80,7 +82,6 @@ export function UncontrolledForm() {
       });
 
       navigate(ROUTES.HOME);
-      // setSubmitted(true);
     } catch (err) {
       if (err instanceof YupValidationError) {
         const formattedErrors: ValidationErrors = {};
@@ -94,6 +95,24 @@ export function UncontrolledForm() {
       }
     }
   };
+
+  const passwordRules = {
+    minLength: passwordValue?.length >= 8,
+    upper: /[A-Z]/.test(passwordValue),
+    lower: /[a-z]/.test(passwordValue),
+    number: /\d/.test(passwordValue),
+    special: /[\W_]/.test(passwordValue),
+  };
+
+  useEffect(() => {
+    const passwordInput = refs.password.current;
+    if (!passwordInput) return;
+
+    const handler = () => setPasswordValue(passwordInput.value);
+    passwordInput.addEventListener('input', handler);
+
+    return () => passwordInput.removeEventListener('input', handler);
+  }, [refs.password]);
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -132,6 +151,7 @@ export function UncontrolledForm() {
         inputRef={refs.password}
         error={errors.password}
       />
+      <PasswordStrengthBar rules={passwordRules} />
 
       <TextField
         id={INPUT_NAME.CONFIRM_PASSWORD}
