@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -82,44 +82,44 @@
 <a name='L17'></a><a href='#L17'>17</a>
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L20'></a><a href='#L20'>20</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { Route, Routes } from 'react-router-dom';<span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Route, Routes } from 'react-router-dom';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >import { AppLayout } from './components/layout/layout';</span>
-<span class="cstat-no" title="statement not covered" >import { Error404Page } from './pages/error404-page/error404-page';</span>
-<span class="cstat-no" title="statement not covered" >import { HomePage } from './pages/home-page/home-page';</span>
-<span class="cstat-no" title="statement not covered" >import { RegisterPage } from './pages/register-page/register-page';</span>
-<span class="cstat-no" title="statement not covered" >import { ROUTES } from './types/types';</span>
+import { AppLayout } from './components/layout/layout';
+import { Error404Page } from './pages/error404-page/error404-page';
+import { HomePage } from './pages/home-page/home-page';
+import { RegisterPage } from './pages/register-page/register-page';
+import { ROUTES } from './types/types';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default function AppRoutes() {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
-<span class="cstat-no" title="statement not covered" >    &lt;Routes&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;Route path={ROUTES.HOME} element={&lt;AppLayout /&gt;}&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Route index element={&lt;HomePage /&gt;} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Route path={ROUTES.REGISTER} element={&lt;RegisterPage /&gt;} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >        &lt;Route path={ROUTES.Error404Page} element={&lt;Error404Page /&gt;} /&gt;</span>
-<span class="cstat-no" title="statement not covered" >      &lt;/Route&gt;</span>
-<span class="cstat-no" title="statement not covered" >    &lt;/Routes&gt;</span>
+export default function AppRoutes() {
+  return (
+    &lt;Routes&gt;
+      &lt;Route path={ROUTES.HOME} element={&lt;AppLayout /&gt;}&gt;
+        &lt;Route index element={&lt;HomePage /&gt;} /&gt;
+        &lt;Route path={ROUTES.REGISTER} element={&lt;RegisterPage /&gt;} /&gt;
+        &lt;Route path={ROUTES.Error404Page} element={&lt;Error404Page /&gt;} /&gt;
+      &lt;/Route&gt;
+    &lt;/Routes&gt;
   );
-<span class="cstat-no" title="statement not covered" >}</span>
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -127,7 +127,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-25T12:24:04.631Z
+                at 2025-08-25T13:12:29.643Z
             </div>
         <script src="../prettify.js"></script>
         <script>

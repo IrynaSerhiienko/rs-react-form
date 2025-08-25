@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">85.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/27</span>
+                <span class='fraction'>23/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">11.11% </span>
+                <span class="strong">85.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/27</span>
+                <span class='fraction'>23/27</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -112,35 +112,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch, useSelector } from 'react-redux';
 &nbsp;
 import type { AppDispatch, RootState } from '../index';
@@ -150,36 +150,36 @@ import {
   type FormData,
 } from '../slices/form-slice';
 &nbsp;
-export const useForms = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const dispatch = useDispatch&lt;AppDispatch&gt;();</span>
+export const useForms = () =&gt; {
+  const dispatch = useDispatch&lt;AppDispatch&gt;();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const reactHookForm = useSelector(</span>
-<span class="cstat-no" title="statement not covered" >    (state: RootState) =&gt; state.forms.reactHookForm</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
-<span class="cstat-no" title="statement not covered" >  const uncontrolledForm = useSelector(</span>
-<span class="cstat-no" title="statement not covered" >    (state: RootState) =&gt; state.forms.uncontrolledForm</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+  const reactHookForm = useSelector(
+    (state: RootState) =&gt; state.forms.reactHookForm
+  );
+  const uncontrolledForm = useSelector(
+    (state: RootState) =&gt; state.forms.uncontrolledForm
+  );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const lastAddedId = useSelector(</span>
-<span class="cstat-no" title="statement not covered" >    (state: RootState) =&gt; state.forms.lastAddedId</span>
-<span class="cstat-no" title="statement not covered" >  );</span>
+  const lastAddedId = useSelector(
+    (state: RootState) =&gt; state.forms.lastAddedId
+  );
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const addReactHookFormData = (data: FormData) =&gt; {</span>
+  const addReactHookFormData = <span class="fstat-no" title="function not covered" >(data: FormData) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    dispatch(addReactHookForm(data));</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  const addUncontrolledFormData = (data: FormData) =&gt; {</span>
+  const addUncontrolledFormData = <span class="fstat-no" title="function not covered" >(data: FormData) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    dispatch(addUncontrolledForm(data));</span>
 <span class="cstat-no" title="statement not covered" >  };</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return {</span>
-<span class="cstat-no" title="statement not covered" >    reactHookForm,</span>
-<span class="cstat-no" title="statement not covered" >    uncontrolledForm,</span>
-<span class="cstat-no" title="statement not covered" >    lastAddedId,</span>
-<span class="cstat-no" title="statement not covered" >    addReactHookFormData,</span>
-<span class="cstat-no" title="statement not covered" >    addUncontrolledFormData,</span>
-<span class="cstat-no" title="statement not covered" >  };</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+  return {
+    reactHookForm,
+    uncontrolledForm,
+    lastAddedId,
+    addReactHookFormData,
+    addUncontrolledFormData,
+  };
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -187,7 +187,7 @@ export const useForms = <span class="fstat-no" title="function not covered" >() 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-25T12:24:04.631Z
+                at 2025-08-25T13:12:29.643Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
