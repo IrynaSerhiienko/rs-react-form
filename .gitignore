@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Coverage HTML files
-*.html
-!public/*.html
