@@ -1,11 +1,12 @@
 import clsx from 'clsx';
-import type { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes, RefObject } from 'react';
 
 interface SelectFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   id: string;
   label: string;
   options: string[];
   error?: string;
+  inputRef?: RefObject<HTMLInputElement | null>;
 }
 
 export function SelectField(props: SelectFieldProps) {
@@ -14,6 +15,7 @@ export function SelectField(props: SelectFieldProps) {
     label,
     options,
     error,
+    inputRef,
     required = false,
     className,
     ...rest
@@ -33,6 +35,7 @@ export function SelectField(props: SelectFieldProps) {
       <input
         id={id}
         list={`${id}-list`}
+        ref={inputRef}
         {...rest}
         className="block w-full rounded border border-[var(--color-base-300)] bg-[var(--color-base-100)]
                    py-2 px-3 text-[var(--color-base-content)] focus:outline-none

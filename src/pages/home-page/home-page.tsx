@@ -27,7 +27,7 @@ export function HomePage() {
           {HOME_PAGE.REGISTER_LINK}
         </span>
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {forms.map((data) => (
           <Card key={data.id} {...data} isNew={data.id === lastAddedId} />
         ))}

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes, RefObject } from 'react';
 
 import { INPUT_TYPE } from '../../../../types/types';
 
@@ -12,6 +12,7 @@ type TextFieldProps = {
   error?: string;
   required?: boolean;
   className?: string;
+  inputRef?: RefObject<HTMLInputElement | null>;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export function TextField(props: TextFieldProps) {
@@ -22,6 +23,7 @@ export function TextField(props: TextFieldProps) {
     error,
     required = false,
     className,
+    inputRef,
     ...rest
   } = props;
 
@@ -44,7 +46,13 @@ export function TextField(props: TextFieldProps) {
           <span className="text-[var(--color-error-content)]">*</span>
         )}
       </label>
-      <input id={id} type={type} className={classInput} {...rest} />
+      <input
+        id={id}
+        type={type}
+        className={classInput}
+        ref={inputRef}
+        {...rest}
+      />
       <p className="text-[var(--color-error-content)] mt-1 min-h-[1.25rem] text-base">
         {error || '\u00A0'}
       </p>

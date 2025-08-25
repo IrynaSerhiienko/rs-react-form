@@ -9,7 +9,7 @@ import { useForms } from '../../../store/hooks/use-forms';
 import {
   BUTTONS,
   FORM_INFO,
-  GENDER,
+  genderOptions,
   INPUT_LABEL,
   INPUT_NAME,
   INPUT_TYPE,
@@ -24,12 +24,6 @@ import { SelectField } from '../inputs/select-field/select-field';
 import { TextField } from '../inputs/text-field/text-field';
 
 type FormData = InferType<typeof schema>;
-
-const genderOptions = [
-  { label: GENDER.MALE, value: GENDER.MALE },
-  { label: GENDER.FEMALE, value: GENDER.FEMALE },
-  { label: GENDER.UNKNOWN, value: GENDER.UNKNOWN },
-];
 
 export function ReactHookForm() {
   const navigate = useNavigate();

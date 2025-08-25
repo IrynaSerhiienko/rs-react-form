@@ -29,7 +29,7 @@ export function Card(props: CardProps) {
     picture,
     isNew,
   } = props;
-  const [highlight, setHighlight] = useState(true);
+  const [highlight, setHighlight] = useState(isNew);
 
   useEffect(() => {
     if (isNew) {

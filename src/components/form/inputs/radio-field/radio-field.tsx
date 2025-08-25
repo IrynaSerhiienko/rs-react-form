@@ -30,10 +30,7 @@ export function RadioField<FormValues extends FieldValues>({
   ...rest
 }: RadioFieldProps<FormValues>) {
   return (
-    <div
-      className={clsx('flex flex-col mb-4 text-base md:text-lg', className)}
-      {...rest}
-    >
+    <div className={clsx('flex flex-col mb-4 text-base md:text-lg', className)}>
       <p className="block font-medium text-[var(--color-base-content)] mb-1">
         {label}{' '}
         {required && (
@@ -51,6 +48,7 @@ export function RadioField<FormValues extends FieldValues>({
               {...(register ? register(id) : {})}
               value={option.value}
               className="accent-[var(--color-primary)]"
+              {...rest}
             />
             {option.label}
           </label>

@@ -128,6 +128,16 @@ export const FORM_INFO = {
   REQUIRED_FIELDS: 'Fields marked with * are required!',
 } as const;
 
+export const BUTTONS_TYPE = {
+  SUBMIT: 'submit',
+} as const;
+
 export const BUTTONS = {
   SUBMIT: 'Submit',
 } as const;
+
+export const genderOptions = [
+  { label: GENDER.MALE, value: GENDER.MALE },
+  { label: GENDER.FEMALE, value: GENDER.FEMALE },
+  { label: GENDER.UNKNOWN, value: GENDER.UNKNOWN },
+];
